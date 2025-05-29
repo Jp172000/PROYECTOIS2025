@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8" />
+ <title>Chatbot de Ayuda</title>
+ <link rel="stylesheet" href="estiloIA.css" />
+</head>
+<body>
+ <div class="contenedor-ia chat-container">
+    <h1>💬 Chatbot de Ayuda</h1>
+
+   <div id="chatBox" class="chat-box">
+ <!-- Los mensajes del chat se añadirán aquí -->
+   </div>
+
+   <div class="chat-input">
+     <input type="text" id="userInput" placeholder="Escribe tu mensaje aquí...">
+     <button id="sendButton">Enviar</button>
+   </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <a class="btn-volver" href="../DashboardAvance/Dashboard.html">
+        🔙 Volver al panel principal
+      </a>
+    </div>
+  </div>
+
+ <!-- Script MÓDULO: Firestore + HF Inference -->
+ <script src="chatbot.js" type="module"></script>
+</body>
+</html>
