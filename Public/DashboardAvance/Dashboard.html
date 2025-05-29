@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - ProyectoIS</title>
+  <link rel="stylesheet" href="grafico_integrantes_dashboard.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../assets/favicon.ico" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+  <script>
+    window.Chart = Chart;
+    window.ChartDataLabels = ChartDataLabels;
+    Chart.register(ChartDataLabels);
+  </script>
+</head>
+<body>
+  <div class="contenedor-principal">
+    <aside class="menu-lateral" id="menu-lateral">
+      <h2>ProyectoIS</h2>
+      <ul>
+        <li class="activo">📊 Dashboard</li>
+        <li onclick="location.href='../Sprints/sprints.html'">Sprints</li>
+        <li onclick="location.href='../Backlogs/Backlogs.html'">Backlogs</li>
+        <li onclick="location.href='../Integrantes/Integrantes.html'">Integrantes</li>
+        <li onclick="location.href='../RequerimientosIA/ia.html'">Requerimientos IA</li>
+      </ul>
+    </aside>
+
+    <main class="contenido-principal centrado" id="contenido-principal">
+      <header class="barra-superior">
+        <div class="titulo-dashboard">Panel general de control del proyecto</div>
+        <div id="userArea">Cargando...</div>
+      </header>
+
+      <div class="seccion-dashboard">
+        
+        <section class="seccion-integrantes">
+          <h3 style="font-size: 20px; font-weight: bold; color: #111; margin-bottom: 10px;">
+            Total de integrantes: <span id="total-integrantes">0</span>
+          </h3>
+          <div class="filtros-rol">
+            <div class="filtro-rol scrum" data-rol="Scrum Master">Scrum Master</div>
+            <div class="filtro-rol desarrollador" data-rol="Desarrollador">Desarrollador</div>
+            <div class="filtro-rol tester" data-rol="Tester">Tester</div>
+            <div class="filtro-rol po" data-rol="Product Owner">Product Owner</div>
+          </div>       
+          <div id="contenedor-integrantes" class="contenedor-integrantes-tarjetas"></div>
+        </section>
+
+        <section class="graficas">
+          <canvas id="graficoHorasRol" width="600" height="300"></canvas>
+        </section>
+
+        <section class="tarjetas-resumen">
+          <div class="tarjeta-resumen tarjeta-sprints">
+            <div class="encabezado-tarjeta">
+              <span>Sprints en Proceso</span>
+              <span>🖨️</span>
+            </div>
+            <div id="valor-sprints" class="valor-tarjeta">0</div>
+          </div>
+          <div class="tarjeta-resumen tarjeta-tareas">
+            <div class="encabezado-tarjeta">
+              <span>Backlogs en Proceso</span>
+              <span>✉️</span>
+            </div>
+            <div id="valor-backlogs" class="valor-tarjeta">0</div>
+          </div>
+          <div class="tarjeta-resumen tarjeta-retrasos">
+            <div class="encabezado-tarjeta">
+              <span>Retrasos</span>
+              <span>‼️⚠️‼️</span>
+            </div>
+            <div class="valor-tarjeta">5</div>
+          </div>
+        </section>
+
+        <section class="grafica-con-filtros">
+          <div class="tarjeta-grafico">
+            <canvas id="graficoSprint" width="700" height="400"></canvas>
+            <div class="leyenda-sprint">
+              <span id="toggle-azul">
+                <div style="width:14px; height:14px; border-radius:50%; background:#2F80ED; border:2px solid #2F80ED;"></div>
+                <span style="color:#2F80ED; font-weight:bold;">En progreso</span>
+              </span>
+              <span id="toggle-verde">
+                <div style="width:14px; height:14px; border-radius:50%; background:#27ae60; border:2px solid #27ae60;"></div>
+                <span style="color:#27ae60; font-weight:bold;">Finalizado</span>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section class="graficas">
+          <canvas id="graficoPastel" width="400" height="300"></canvas>
+        </section>
+        
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="../js/plantillaProtegida.js"></script>
+  <script type="module" src="dashboardGraficas.js"></script>
+</body>
+</html>

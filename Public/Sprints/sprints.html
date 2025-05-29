@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sprints - ProyectoIS</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="sprints.css" />
+</head>
+<body>
+  <div class="contenedor-principal">
+    <aside class="menu-lateral">
+      <h2>ProyectoIS</h2>
+      <ul>
+        <li onclick="location.href='../DashboardAvance/Dashboard.html'">📊 Dashboard</li>
+        <li class="activo">Sprints</li>
+        <li onclick="location.href='../Backlogs/Backlogs.html'">Backlogs</li>
+        <li onclick="location.href='../Integrantes/Integrantes.html'">Integrantes</li>
+        <li onclick="location.href='../RequerimientosIA/ia.html'">Requerimientos IA</li>
+      </ul>
+    </aside>
+
+    <main class="contenido-principal centrado" id="contenido-principal">
+      <header class="barra-superior">
+        <h3>Sprints</h3>
+        <div id="userArea" class="usuario-dropdown">Cargando...</div>
+      </header>
+
+      <button id="btnAbrirModalSprint" class="formulario button">+ Crear Sprint</button>
+
+      <div id="modalSprint" class="modal-sprint">
+        <div class="modal-contenido">
+          <h3 id="tituloModal">Nuevo Sprint</h3>
+          <form id="formSprint" class="formulario">
+            <input type="hidden" id="sprintId" />
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required placeholder="Nombre del sprint" />
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" rows="2" required placeholder="Descripción del sprint"></textarea>
+
+            <label for="fechaInicio">Fecha de inicio:</label>
+            <input type="date" id="fechaInicio" required />
+
+            <label for="fechaFin">Fecha de fin:</label>
+            <input type="date" id="fechaFin" required />
+
+            <label for="estado">Estado:</label>
+            <select id="estado" required>
+              <option value="Planeado">Planeado</option>
+              <option value="En progreso">En progreso</option>
+              <option value="Completado">Completado</option>
+            </select>
+
+            <label for="integrantes">Selecciona Integrantes:</label>
+            <div id="listaIntegrantes" class="checkbox-group"></div>
+
+            <label for="backlog">Backlog:</label>
+            <select id="backlog" required></select>
+
+            <div class="modal-botones">
+              <button type="submit" id="btnGuardarSprint" class="btn-verde">➕ Guardar</button>
+              <button type="button" class="btn-rojo" onclick="cerrarModalSprint()">✖ Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <section>
+        <h4>Listado de Sprints</h4>
+        <table class="tabla-sprints">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Estado</th>
+              <th>Fecha Inicio</th>
+              <th>Fecha Fin</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaSprints"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <div id="modalConfirmar" class="modal">
+    <div class="modal-content modal-eliminar">
+      <h3>¿Eliminar Sprint?</h3>
+      <p id="textoConfirmacion">¿Estás seguro de eliminar este sprint?</p>
+      <div class="botones-eliminar">
+        <button id="btnConfirmarEliminar" class="btn pastel-verde">Sí</button>
+        <button id="btnCancelarEliminar" class="btn pastel-rojo">No</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="../js/plantillaProtegida.js"></script>
+  <script type="module" src="sprintsController.js"></script>
+</body>
+</html>

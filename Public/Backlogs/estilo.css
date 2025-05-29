@@ -1,0 +1,264 @@
+.saludo-usuario {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.titulo-seccion {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 50px 0 20px;
+}
+
+.boton-animado {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  color: #00cfff;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 2px solid #00cfff;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.boton-animado::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: #00cfff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: -1;
+}
+
+.boton-animado:hover::before {
+  width: 300%;
+  height: 300%;
+}
+
+.boton-animado:hover {
+  color: #fff;
+  box-shadow: 0 0 15px #00cfff, 0 0 30px #00cfff, 0 0 45px #00cfff;
+}
+
+.tabla-backlogs {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-backlogs th,
+.tabla-backlogs td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-backlogs th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.estado-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.estado-dot.pendiente {
+  background-color: gray;
+}
+
+.estado-dot.en-progreso {
+  background-color: #0078D4;
+}
+
+.estado-dot.completado {
+  background-color: green;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.formulario {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 320px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  max-width: 90vw;
+  overflow-wrap: break-word;
+}
+
+.formulario h2 {
+  margin-top: 0;
+}
+
+.formulario label {
+  display: block;
+  margin-top: 1rem;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea#descripcion {
+  resize: none;
+  overflow: hidden;
+}
+
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.btn-icono {
+  font-size: 18px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn-icono:hover {
+  transform: scale(1.1) rotate(360deg);
+}
+
+.btn-agregar {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-cancelar {
+  background-color: #dc3545;
+  color: white;
+}
+
+.boton-icono-redondo {
+  width: 44px;
+  height: 44px;
+  margin: 4px;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.boton-editar {
+  background-color: #eeb2d0;
+}
+
+.boton-ver {
+  background-color: #a7ffeb;
+  color: #333;
+}
+
+.boton-eliminar {
+  background-color: #d7aeff;
+}
+
+.boton-icono-redondo:hover {
+  transform: rotate(360deg);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.boton-cerrar-modal {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-cerrar-modal:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.valid-input {
+  border: 2px solid green !important;
+  background-color: #e6ffe6 !important;
+}
+
+.error-input {
+  border: 2px solid red !important;
+  background-color: #ffe6e6 !important;
+}
+
+.contador {
+  font-size: 12px;
+  color: #555;
+  text-align: right;
+  margin-top: 4px;
+}
+
+#verDescripcion {
+  text-align: justify;
+}
+
+.alerta-flotante {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 1000;
+  display: none;
+}
+
+.btn-icono svg {
+  pointer-events: none;
+}

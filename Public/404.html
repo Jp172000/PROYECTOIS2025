@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>404 - Página no encontrada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #e5ecf3;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .contenedor {
+      text-align: center;
+      padding: 40px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .contenedor img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #ff6b6b;
+      margin: 10px 0;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: normal;
+      margin: 10px 0 20px;
+      color: #666;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .botones a {
+      background: #0078D4;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: 0.3s ease;
+    }
+
+    .botones a:nth-child(2) {
+      background: #f4f4f4;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+
+    .botones a:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <img src="https://cdn-icons-png.flaticon.com/512/7486/7486049.png" alt="404 Error">
+    <h1>404</h1>
+    <h2>Página no encontrada</h2>
+    <p>Lo sentimos, no pudimos encontrar la página que estás buscando.</p>
+    <div class="botones">
+      <a href="/">🏠 Volver al inicio</a>
+      <a href="mailto:shernandezc43@miumg.edu.gt">📧 Contáctanos</a>
+    </div>
+  </div>
+</body>
+</html>

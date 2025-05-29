@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Integrantes - ProyectoIS</title>
+  <link rel="stylesheet" href="EstiloIntegrantes.css" />
+</head>
+<body>
+  <div class="contenedor-principal">
+    <aside class="menu-lateral">
+      <h2>ProyectoIS</h2>
+      <ul>
+        <li onclick="location.href='../DashboardAvance/Dashboard.html'">📊 Dashboard</li>
+        <li onclick="location.href='../Sprints/sprints.html'">Sprints</li>
+        <li onclick="location.href='../Backlogs/Backlogs.html'">Backlogs</li>
+        <li class="activo">Integrantes</li>
+        <li onclick="location.href='../RequerimientosIA/ia.html'">Requerimientos IA</li>
+      </ul>
+    </aside>
+
+    <main class="contenido-principal">
+      <header class="barra-superior">
+        <div id="userArea">Cargando...</div>
+      </header>
+
+      <div class="titulo-seccion">Gestor de Integrantes</div>
+      <button id="btnMostrarFormulario" class="boton-agregar-integrante">+ Agregar integrante</button>
+
+      <table class="tabla-integrantes">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaIntegrantes"></tbody>
+      </table>
+    </main>
+  </div>
+
+  <div class="modal" id="modalFormulario">
+    <div class="modal-contenido">
+      <h3 id="formTitulo">Nuevo integrante</h3>
+      <input type="text" id="nombreIntegrante" placeholder="Nombre" maxlength="15" />
+      <p><strong>Rol actual:</strong> <span id="rolActual"></span></p>
+      <select id="rolNuevo">
+        <option value="">Seleccionar rol</option>
+        <option value="Scrum Master">Scrum Master</option>
+        <option value="Desarrollador">Desarrollador</option>
+        <option value="Tester">Tester</option>
+        <option value="Product Owner">Product Owner</option>
+      </select>
+      <div class="acciones">
+        <button class="btn-agregar" id="btnForm">Agregar</button>
+        <button class="btn-cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modalConfirmacion">
+    <div class="modal-contenido">
+      <h3>¿Eliminar integrante?</h3>
+      <p id="mensajeEliminar"></p>
+      <div class="acciones">
+        <button class="btn-agregar btn-confirmar">Sí</button>
+        <button class="btn-cancelar">No</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mensajeFlotante" class="mensaje" style="display: none;"></div>
+
+  <script type="module" src="../js/plantillaProtegida.js"></script>
+  <script type="module" src="integrantes.js"></script>
+</body>
+</html>

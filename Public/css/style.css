@@ -1,0 +1,141 @@
+
+body.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contenedor-login {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.contenedor-login h1 {
+  color: #2F80ED;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.contenedor-login p {
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.contenedor-login button {
+  background-color: #2F80ED;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contenedor-login button:hover {
+  background-color: #1c5ccf;
+}
+
+footer {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #777;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+}
+.contenedor-principal {
+  display: flex;
+  min-height: 100vh;
+}
+.menu-lateral {
+  background-color: #1e2a38;
+  color: white;
+  width: 220px;
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+}
+.menu-lateral ul li {
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.menu-lateral ul li.activo,
+.menu-lateral ul li:hover {
+  background-color: #2e3e51;
+}
+.contenido-principal {
+  flex-grow: 1;
+  padding: 2rem 3rem;
+  margin-left: 300px;
+  transition: margin-left 0.3s ease;
+}
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#userArea {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 200;
+}
+.usuario-dropdown {
+  position: relative;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  display: inline-block;
+}
+.usuario-dropdown:hover {
+  background-color: #e0e0e0;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 5px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+.dropdown-menu button,
+.dropdown-menu a {
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+}
+.dropdown-menu button:hover,
+.dropdown-menu a:hover {
+  text-decoration: underline;
+}
