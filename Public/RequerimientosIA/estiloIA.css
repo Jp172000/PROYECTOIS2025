@@ -1,0 +1,81 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.contenedor-ia {
+  width: 95%;
+  max-width: 700px;
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-ia h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #2F80ED;
+  margin-bottom: 30px;
+}
+
+button {
+  background-color: #2F80ED;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1c60b3;
+}
+
+.recomendaciones {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #eaf4ff;
+  border-left: 5px solid #2F80ED;
+  border-radius: 8px;
+}
+
+.recomendaciones h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #1e5fa5;
+}
+
+.recomendaciones ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #444;
+}
+
+.recomendaciones ul li {
+  margin-bottom: 10px;
+}
+
+.btn-volver {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: #2F80ED;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #1c60b3;
+}
